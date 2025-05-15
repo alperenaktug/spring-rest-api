@@ -1,6 +1,7 @@
 package com.alperenaktug.controller;
 
 import com.alperenaktug.model.Employee;
+import com.alperenaktug.model.UpdateEmployeeRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.alperenaktug.services.EmployeeService;
@@ -47,6 +48,12 @@ public class RestEmployeeController {
          return employeeService.deleteEmployee(id);
 
     }
+
+        @PutMapping(path = "/update-employee/{id}")
+        public Employee updateEmployee(@PathVariable(name = "id") String id ,
+                                       @RequestBody UpdateEmployeeRequest request) {
+         return employeeService.updateEmployee(id, request);
+        }
 }
 
 
