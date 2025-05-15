@@ -34,4 +34,8 @@ public class EmployeeService {
         return employeeRepository.saveEmployee(newEmployee);
 
     }
+
+    public boolean deleteEmployee(String id){
+        return employeeRepository.deleteEmployee(id);
+    }
 }
